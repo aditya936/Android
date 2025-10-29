@@ -24,7 +24,19 @@ grep -Eirn --color \
 ```
 grep -RInP --binary-files=without-match '\b(?:system|exec|sh|chmod|su|curl|wget|eval|runtime|loadlibrary|popen|dlopen|dlsym|fopen|strcpy|sprintf)\b|/bin' /path/to/dir
 ```
-<br><br><br><br><br>
+<br><br>
+3. 
+```
+grep -rE -inI --binary-files=without-match --color=always \
+'(AIza[0-9A-Za-z_\-]{35}|AAAA[A-Za-z0-9_\-]{7}:[A-Za-z0-9_\-]{140}|6L[0-9A-Za-z_\-]{38}|A[SK]IA[0-9A-Z]{16}|amzn\.mws\.[0-9a-f\-]{36}|s3\.amazonaws\.com|EAACEdEose0cBA[0-9A-Za-z]+|authorization[:= ]*(basic|bearer)\s+[A-Za-z0-9=:_\+\/\-]{20,100}|SK[0-9a-fA-F]{32}|sq0csp-[0-9A-Za-z_\-]{43}|sqOatp-[0-9A-Za-z_\-]{22}|sk_live_[0-9a-zA-Z]{24}|ghp_[a-zA-Z0-9]{36})' .
+
+
+grep -rE -inI --binary-files=without-match --color=always \
+'(-----BEGIN (RSA|DSA|EC|PGP|OPENSSH|SSH2|PRIVATE) PRIVATE KEY-----|ey[A-Za-z0-9\-_=]+\.[A-Za-z0-9\-_=]+\.?[A-Za-z0-9\-_.+/=]*|xox[baprs]-[A-Za-z0-9\-]{10,48}|https://hooks.slack.com/services/[A-Za-z0-9]+/[A-Za-z0-9]+/[A-Za-z0-9]+|sl\.[A-Za-z0-9_\-]{16,50}|pk_live_[0-9a-zA-Z]{24}|ya29\.[0-9A-Za-z_\-]+|SG\.[A-Za-z0-9_\-]{22}\.[A-Za-z0-9_\-]{43}|glpat-[A-Za-z0-9\-]{20}|shpat_[A-Za-z0-9]{32}|LTAI[A-Za-z0-9]{12,20}|AKID[A-Za-z0-9]{13,20}|discord(app)?\.com/api/webhooks/[0-9]{18,20}/[A-Za-z0-9_\-]{64,})' .
+
+```
+
+<br><br><br>
 
 
 -----------------
