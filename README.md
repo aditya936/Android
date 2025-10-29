@@ -29,7 +29,7 @@ grep -RInP --binary-files=without-match '\b(?:system|exec|sh|chmod|su|curl|wget|
 
 -----------------
 ## Gmap api key quick check
-save as .py  -> exec as python3 gmap.py <KEY-HERE>
+save as .py  -> exec as python3 gmap.py KEY-HERE
 
 ```
 #!/usr/bin/env python3
