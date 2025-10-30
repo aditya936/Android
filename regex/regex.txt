@@ -1,0 +1,328 @@
+
+
+
+❤ https://github.com/edoardottt/secfiles/regex/secrets.md
+
+- AWS Access Key: `(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}`
+- AWS Secret Key: `(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]`
+- AWS MWS Key: `amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}`
+- Amazon SNS topic: `arn:aws:sns:[a-z0-9\-]+:[0-9]+:[A-Za-z0-9\-_]+`
+- Facebook Secret Key: `(?i)(facebook|fb)(.{0,20})?(?-i)['\"][0-9a-f]{32}['\"]`
+- Facebook Client ID: `(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}['\"]`
+- Cloudinary Basic Auth: `cloudinary://[0-9]{15}:[0-9A-Za-z\\-_]+@[0-9A-Za-z\\-_]+`
+- Firebase Database: `([a-z0-9.-]+\.firebaseio\.com|[a-z0-9.-]+\.firebaseapp\.com)`
+- Twitter Secret Key: `(?i)twitter(.{0,20})?[0-9a-z]{35,44}`
+- Twitter Client ID: `(?i)twitter(.{0,20})?[0-9a-z]{18,25}`
+- Github Personal Access Token: `ghp_[0-9a-zA-Z]{36}`
+- Github OAuth Access Token: `gho_[0-9a-zA-Z]{36}`
+- Github App Token: `(ghu|ghs)_[0-9a-zA-Z]{36}`
+- Github Refresh Token: `ghr_[0-9a-zA-Z]{76}`
+- LinkedIn Client ID: `(?i)linkedin(.{0,20})?(?-i)[0-9a-z]{12}`
+- LinkedIn Secret Key: `(?i)linkedin(.{0,20})?[0-9a-z]{16}`
+- Slack: `xox[baprs]-([0-9a-zA-Z]{10,48})?`
+- Asymmetric Private Key: `-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----`
+- Google API key: `AIza[0-9A-Za-z\\-_]{35}`
+- Google (GCP) Service Account: `"type": "service_account"`
+- Heroku API key: `(?i)heroku(.{0,20})?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}`
+- MailChimp API key: `[0-9a-f]{32}-us[0-9]{1,2}`
+- Mailgun API key: `key\-[0-9a-zA-Z]{32}`
+- Picatic API Key: `sk\_live\_[0-9a-z]{32}`
+- PayPal Braintree access token: `access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}`
+- SendGrid API Key: `SG\.[\w_]{16,32}\.[\w_]{16,64}`
+- Slack Webhook: `https\:\/\/hooks\.slack\.com\/services\/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{24}`
+- Stripe API key: `(?i)stripe(.{0,20})?[sr]k_live_[0-9a-zA-Z]{24}`
+- Square access token: `sq0atp\-[0-9A-Za-z\-_]{22}`
+- Square OAuth secret: `sq0csp\-[0-9A-Za-z\\-_]{43}`
+- Twilio API key: `(?i)twilio(.{0,20})?SK[0-9a-f]{32}`
+- Dynatrace token: `dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}`
+- Shopify shared secret: `shpss\_[a-fA-F0-9]{32}`
+- Shopify access token: `shpat\_[a-fA-F0-9]{32}`
+- Shopify custom app access token: `shpca\_[a-fA-F0-9]{32}`
+- Shopify private app access token: `shppa\_[a-fA-F0-9]{32}`
+- PyPI upload token: `pypi\-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}`
+- Bugsnag API Key: `(?i)(bs|bugsnag)(.{0,20})?[0-9a-f]{32}`
+- AWS cognito pool: `(us-east-1|us-east-2|us-west-1|us-west-2|sa-east-1):[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}`
+- DigitalOcean Personal Access Token: `dop_v1_[0-9a-f]{64}`
+- Gitlab Personal Access Token: `glpat-[0-9a-zA-Z-_]{20}`
+- Gitlab Runner Token: `GR1348941[a-zA-Z0-9\-=_]{20,40}`
+- Netlify Token: `(?i)netlify(.{0,20})?['\"][0-9a-zA-Z]{40}['\"]`
+- Okta Token: `00[0-9a-zA-Z]{20}\$[0-9a-zA-Z]{6,}`
+- Sentry Auth Token: `sentry_auth_token_[0-9a-zA-Z]{70}`
+- Telegram Bot Token: `[0-9]{8,10}:AA[0-9A-Za-z_-]{35}`
+- Zoom JWT Token: `(?i)zoom(.{0,20})?['\"][0-9a-zA-Z-_\.]{36,160}['\"]`
+- Adobe Client Credentials: `(?i)adobe(.{0,20})?['\"][a-zA-Z0-9]{32,56}['\"]`
+- Firebase Web API Key: `AIza[0-9A-Za-z\\-_]{35}`
+
+
+
+
+❤ https://github.com/cc1a2b/JShunter/blob/dc47b6ba2add6e9fbc5d40cd6f125a9eb16e8dbc/jshunter.go
+
+	"Google API":                    regexp.MustCompile(`AIza[0-9A-Za-z-_]{35}`),
+	"Firebase":                      regexp.MustCompile(`AAAA[A-Za-z0-9_-]{7}:[A-Za-z0-9_-]{140}(?:\s|$|[^A-Za-z0-9_-])`),
+	"Google Captcha":                regexp.MustCompile(`6L[0-9A-Za-z-_]{38}|^6[0-9a-zA-Z_-]{39}$`),
+	"Amazon Aws Access Key ID":      regexp.MustCompile(`A[SK]IA[0-9A-Z]{16}`),
+	"Amazon Aws Url":                regexp.MustCompile(`s3\.amazonaws.com[/]+|[a-zA-Z0-9_-]*\.s3\.amazonaws.com`),
+	"Amazon Aws Url2":               regexp.MustCompile(`([a-zA-Z0-9-._]+\.s3\.amazonaws\.com|s3://[a-zA-Z0-9-._]+|s3-[a-zA-Z0-9-._/]+|s3.amazonaws.com/[a-zA-Z0-9-._]+|s3.console.aws.amazon.com/s3/buckets/[a-zA-Z0-9-._]+)`),
+	"Facebook Access Token":         regexp.MustCompile(`EAACEdEose0cBA[0-9A-Za-z]+`),
+	"Authorization Basic":           regexp.MustCompile(`(?i)\bauthorization\s*:\s*basic\s+[a-zA-Z0-9=:_\+\/-]{20,100}`),
+	"Authorization Bearer":          regexp.MustCompile(`(?i)\bauthorization\s*:\s*bearer\s+[a-zA-Z0-9_\-\.=:_\+\/]{20,100}`),
+    "Authorization Api":             regexp.MustCompile(`(?i)\bapi[_-]?key\s*[:=]\s*["']?[a-zA-Z0-9_\-]{20,100}["']?`),
+	"Twilio Api Key":                regexp.MustCompile(`SK[0-9a-fA-F]{32}`),
+	"Twilio Account Sid":            regexp.MustCompile(`(?i)\b(?:twilio|tw)\s*[_-]?account[_-]?sid\s*[:=]\s*["']?AC[a-zA-Z0-9_\-]{32}["']?`),
+	"Twilio App Sid":                regexp.MustCompile(`AP[a-zA-Z0-9_\-]{32}`),
+	"Paypal Braintre Access Token":  regexp.MustCompile(`access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}`),
+	"Square Oauth Secret":           regexp.MustCompile(`sq0csp-[0-9A-Za-z\-_]{43}|sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`),
+	"Square Access Token":           regexp.MustCompile(`sqOatp-[0-9A-Za-z\-_]{22}|EAAA[a-zA-Z0-9]{60}`),
+	"Stripe Standard Api":           regexp.MustCompile(`sk_live_[0-9a-zA-Z]{24}`),
+	"Stripe Restricted Api":         regexp.MustCompile(`rk_live_[0-9a-zA-Z]{24}`),
+	"Authorization Github Token":    regexp.MustCompile(`\bghp_[a-zA-Z0-9]{36}\b`),
+	"Github Access Token":           regexp.MustCompile(`[a-zA-Z0-9_-]*:[a-zA-Z0-9_\-]+@github\.com*`),
+	"Rsa Private Key":               regexp.MustCompile(`-----BEGIN RSA PRIVATE KEY-----`),
+	"Ssh Dsa Private Key":           regexp.MustCompile(`-----BEGIN DSA PRIVATE KEY-----`),
+	"Ssh Dc Private Key":            regexp.MustCompile(`-----BEGIN EC PRIVATE KEY-----`),
+	"Pgp Private Block":             regexp.MustCompile(`-----BEGIN PGP PRIVATE KEY BLOCK-----`),
+	"Ssh Private Key":               regexp.MustCompile(`(?s)-----BEGIN OPENSSH PRIVATE KEY-----[a-zA-Z0-9+\/=\n]+-----END OPENSSH PRIVATE KEY-----`),
+	"Json Web Token":                regexp.MustCompile(`ey[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$`),
+    "Putty Private Key":             regexp.MustCompile(`(?s)PuTTY-User-Key-File-2.*?-----END`),
+    "Ssh2 Encrypted Private Key":    regexp.MustCompile(`(?s)-----BEGIN SSH2 ENCRYPTED PRIVATE KEY-----[a-zA-Z0-9+\/=\n]+-----END SSH2 ENCRYPTED PRIVATE KEY-----`),
+    "Generic Private Key":           regexp.MustCompile(`(?s)-----BEGIN.*PRIVATE KEY-----[a-zA-Z0-9+\/=\n]+-----END.*PRIVATE KEY-----`),
+    "Username Password Combo":       regexp.MustCompile(`(?i)^[a-z]+:\/\/[^\/]*:[^@]+@`),
+    "Facebook Oauth":                regexp.MustCompile(`(?i)[fF][aA][cC][eE][bB][oO][oO][kK].*['\"]?[0-9a-f]{32}['\"]?`),
+    "Twitter Oauth":                 regexp.MustCompile(`(?i)\b(?:twitter|tw)\s*[_-]?oauth[_-]?token\s*[:=]\s*["']?[0-9a-zA-Z]{35,44}["']?`),
+    "Github Token":                  regexp.MustCompile(`(?i)\b(gh[pousr]_[0-9a-zA-Z]{36})\b`),
+    "Google Oauth Client Secret":    regexp.MustCompile(`\"client_secret\":\"[a-zA-Z0-9-_]{24}\"`),
+    "Aws Api Key":                   regexp.MustCompile(`\bAKIA[0-9A-Z]{16}\b`),
+	"Slack Token":                   regexp.MustCompile(`\"api_token\":\"(xox[a-zA-Z]-[a-zA-Z0-9-]+)\"`),
+	"Ssh Priv Key":                  regexp.MustCompile(`([-]+BEGIN [^\s]+ PRIVATE KEY[-]+[\s]*[^-]*[-]+END [^\s]+ PRIVATE KEY[-]+)`),
+	"Heroku Api Key":                regexp.MustCompile(`[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}`),
+	"Slack Webhook Url":             regexp.MustCompile(`https://hooks.slack.com/services/[A-Za-z0-9]+/[A-Za-z0-9]+/[A-Za-z0-9]+`),
+	"Heroku Api Key 2":              regexp.MustCompile(`[hH]eroku[a-zA-Z0-9]{32}`),
+	"Dropbox Access Token":          regexp.MustCompile(`(?i)^sl\.[A-Za-z0-9_-]{16,50}$`),
+	"Salesforce Access Token":       regexp.MustCompile(`00D[0-9A-Za-z]{15,18}![A-Za-z0-9]{40}`),
+	"Twitter Bearer Token":          regexp.MustCompile(`(?i)^AAAAAAAAAAAAAAAAAAAAA[A-Za-z0-9]{30,45}$`),
+	"Firebase Url":                  regexp.MustCompile(`https://[a-z0-9-]+\.firebaseio\.com`),
+	"Pem Private Key":               regexp.MustCompile(`-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----`),
+	"Google Cloud Sa Key":           regexp.MustCompile(`"type": "service_account"`),
+	"Stripe Publishable Key":        regexp.MustCompile(`pk_live_[0-9a-zA-Z]{24}`),
+	"Azure Storage Account Key":     regexp.MustCompile(`(?i)^[A-Za-z0-9]{44}=[A-Za-z0-9+/=]{0,43}$`),
+	"Instagram Access Token":        regexp.MustCompile(`IGQV[A-Za-z0-9._-]{10,}`),
+	"Stripe Test Publishable Key":   regexp.MustCompile(`pk_test_[0-9a-zA-Z]{24}`),
+	"Stripe Test Secret Key":        regexp.MustCompile(`sk_test_[0-9a-zA-Z]{24}`),
+	"Slack Bot Token":               regexp.MustCompile(`xoxb-[A-Za-z0-9-]{24,34}`),
+	"Slack User Token":              regexp.MustCompile(`xoxp-[A-Za-z0-9-]{24,34}`),
+    "Google Gmail Api Key":          regexp.MustCompile(`AIza[0-9A-Za-z\\-_]{35}`),
+    "Google Gmail Oauth":            regexp.MustCompile(`\b[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com\b`),
+    "Google Oauth Access Token":     regexp.MustCompile(`ya29\.[0-9A-Za-z\\-_]+`),
+    "Mailchimp Api Key":             regexp.MustCompile(`[0-9a-f]{32}-us[0-9]{1,2}`),
+    "Mailgun Api Key":               regexp.MustCompile(`key-[0-9a-zA-Z]{32}`),
+    "Google Drive Oauth":            regexp.MustCompile(`\b[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com\b`),
+    "Paypal Braintree Access Token": regexp.MustCompile(`access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}`),
+    "Picatic Api Key":               regexp.MustCompile(`sk_live_[0-9a-z]{32}`),
+    "Stripe Api Key":                regexp.MustCompile(`sk_live_[0-9a-zA-Z]{24}`),
+    "Stripe Restricted Api Key":     regexp.MustCompile(`rk_live_[0-9a-zA-Z]{24}`),
+    "Square Access Token 2":         regexp.MustCompile(`sq0atp-[0-9A-Za-z\\-_]{22}`),
+    "Square Oauth Secret 2":         regexp.MustCompile(`sq0csp-[0-9A-Za-z\\-_]{43}`),
+    "Twitter Access Token":          regexp.MustCompile(`(?i)\b(?:twitter|tw)\s*[_-]?access[_-]?token\s*[:=]\s*["']?[0-9]+-[0-9a-zA-Z]{40}["']?`),
+	"Heroku Api Key 3":              regexp.MustCompile(`(?i)[hH][eE][rR][oO][kK][uU].*[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}`),
+    "Generic Api Key":               regexp.MustCompile(`(?i)\bapi[_-]?key\s*[:=]\s*['\"]?[0-9a-zA-Z]{32,45}['\"]?`),
+    "Generic Secret":                regexp.MustCompile(`(?i)\bsecret\s*[:=]\s*['\"]?[0-9a-zA-Z]{32,45}['\"]?`),
+    "Slack Webhook":                 regexp.MustCompile(`https://hooks[.]slack[.]com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}`),
+    "Gcp Service Account":           regexp.MustCompile(`\"type\": \"service_account\"`),
+    "Password in Url":               regexp.MustCompile(`[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]`),
+	"Discord Webhook url":           regexp.MustCompile(`https://discord(?:app)?\.com/api/webhooks/[0-9]{18,20}/[A-Za-z0-9_-]{64,}`),
+	"Discord bot Token":             regexp.MustCompile(`[MN][A-Za-z\d]{23}\.[\w-]{6}\.[\w-]{27}`),
+	"Okta Api Token":                regexp.MustCompile(`00[a-zA-Z0-9]{30}\.[a-zA-Z0-9\-_]{30,}\.[a-zA-Z0-9\-_]{30,}`),
+	"Sendgrid Api Key":              regexp.MustCompile(`SG\.[A-Za-z0-9_-]{22}\.[A-Za-z0-9_-]{43}`),
+	"Mapbox Access Token":           regexp.MustCompile(`pk\.[a-zA-Z0-9]{60}\.[a-zA-Z0-9]{22}`),
+	"Gitlab Personal Access token":  regexp.MustCompile(`glpat-[A-Za-z0-9\-]{20}`),
+	"Datadog Api Key":               regexp.MustCompile(`ddapi_[a-zA-Z0-9]{32}`),
+	"shopify Access Token":          regexp.MustCompile(`shpat_[A-Za-z0-9]{32}`),
+    "Atlassian Access Token":        regexp.MustCompile(`[a-zA-Z0-9]{20,}\.[a-zA-Z0-9_-]{6,}\.[a-zA-Z0-9_-]{25,}`),
+	"Crowdstrike Api Key":           regexp.MustCompile(`(?i)^[A-Za-z0-9]{32}\.[A-Za-z0-9]{16}$`),
+	"Quickbooks Api Key":            regexp.MustCompile(`A[0-9a-f]{32}`),
+	"Cisco Api Key":                 regexp.MustCompile(`cisco[A-Za-z0-9]{30}`),
+	"Cisco Access Token":            regexp.MustCompile(`access_token=\w+`),
+	"Segment Write Key":             regexp.MustCompile(`sk_[A-Za-z0-9]{32}`),
+	"Tiktok Access Token":           regexp.MustCompile(`tiktok_access_token=[a-zA-Z0-9_]+`),
+	"Slack Client Secret":           regexp.MustCompile(`xoxs-[0-9]{1,9}.[0-9A-Za-z]{1,12}.[0-9A-Za-z]{24,64}`),
+    "Phone Number":                  regexp.MustCompile(`^\+\d{9,14}$`),
+    "Email":                         regexp.MustCompile(`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`),
+	"Ali Cloud Access Key":		     regexp.MustCompile(`^LTAI[A-Za-z0-9]{12,20}$`),
+	"Tencent Cloud Access Key":	     regexp.MustCompile(`^AKID[A-Za-z0-9]{13,20}$`),
+  
+  
+  ❤ https://github.com/aditya936/git1/blob/main/dorks.txt
+  
+    DRUPAL /\$S\$[a-zA-Z0-9_\/\.]{52}/ 
+  WORDPRESS /\$P\$[a-zA-Z0-9_\/\.]{31}/
+  CLIENT /(p8e-)[a-z0-9]{32}/
+  /AGE-SECRET-KEY-1[QPZRY9X8GF2TVDW0S3JN54KHCE6MUA7L]{58}/
+  ALIBABA /(LTAI)[a-z0-9]{20}/
+  ARTIFACTORY /["\']AKC[a-zA-Z0-9]{10,}["\']|["\']AP[0-9ABCDEF][a-zA-Z0-9]{8,}["\']/
+  aws /(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}/
+  aws /da2-[a-z0-9]{26}/
+  /:\/\/[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+/
+  /([a-z0-9_ \\.,\\-]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}[\'"]([a-zA-Z0-9]{64})[\'"]/
+  CLIENT /(([a-z0-9_ \\.,\\-]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}[\'"]([a-z0-9]{32})[\'"])/
+  DROPBOX /sl.[a-zA-Z0-9_-]{136}/
+  /EAACEdEose0cBA[0-9A-Za-z]+/
+  /([fF][aA][cC][eE][bB][oO][oO][kK]|[fF][bB])(.{0,20})?[\'"][0-9]{13,17}/
+  /(ghu|ghs)_[0-9a-zA-Z]{36}/
+  /gho_[0-9a-zA-Z]{36}/
+  /ghp_[0-9a-zA-Z]{36}/
+  /glpat-[0-9a-zA-Z\\-]{20}/
+  /AIza[0-9A-Za-z_\\-]{35}/
+  /(google|gcp|youtube|drive|yt)(.{0,20})?[\'"][AIza[0-9a-z_\\-]{35}][\'"]/
+  /eyJrIjoi[a-z0-9_=\\-]{72,92}/
+  /[hH][eE][rR][oO][kK][uU].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}/
+  /[\'"][a-h0-9]{8}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{4}-[a-h0-9]{12}[\'"]/
+  /(NRAK-[A-Z0-9]{27})|((newrelic[a-z0-9_ \\.,\\-]{0,25})(=|>|:=|\\|\\|:|<=|=>|:).{0,5}[\'"]([A-Z0-9]{64})[\'"])|(NRJS-[a-f0-9]{19})/
+  /SG\\.[a-zA-Z0-9_\\.\\-]{66}/
+  /xox[baprs]-([0-9a-zA-Z]{10,48})?/
+  https://hooks.slack.com/services/T
+  /EAAAE[a-zA-Z0-9_-]{59}/
+  /(sk|pk)_(test|live)_[0-9a-z]{10,32}|k_live_[0-9a-zA-Z]{24}/
+  /[0-9]+:AA[0-9A-Za-z\\\\-_]{33}/
+  /(AQVN[A-Za-z0-9_\\-]{35,38})/
+  /(YC[a-zA-Z0-9_\\-]{38})/
+  /[sS][eE][cC][rR][eE][tT].*[\'"][0-9a-zA-Z]{32,45}[\'"]/
+  TWILIO /\W[a-f0-9]{32}\W/
+  TWILIO /(AC[a-f0-9]{32}[^a-f0-9])/ 
+  /([0-9]{12}-[a-z0-9]{32}.apps.googleusercontent.com)/
+   https://
+   http://
+   ldap
+   ftp
+   sftp
+   host:
+   login
+   path:*.sql mysql dump
+   path:**/.bashrc password
+   ATLASSIAN API KEY
+   ASANA CLIENT ID
+   AWS SECRET
+   AWS.config.accessKeyId
+   AWS.config.secretAccessKey
+   AWS_ACCESS_KEY_ID
+   access_key
+access_token
+accessKey
+accessToken
+account_sid
+accountsid
+admin_pass
+admin_user
+api_key
+api_secret
+apikey
+app_debug
+app_env
+app_id
+app_key
+app_log_level
+app_name
+app_secret
+app_url
+application_id
+asws_secret_token
+auth
+authsecret
+aws_access
+aws_access_key_id
+aws_bucket
+aws_config
+aws_default_region
+aws_key
+aws_secret
+aws_secret_access_key
+aws_secret_key
+aws_token
+bucket_password
+client_secret
+database_host
+database_logging
+database_password
+database_url
+database_username
+db_connection
+db_database
+db_host
+db_password
+db_port
+db_server
+db_username
+dbpasswd
+dbpassword
+dbuser
+debug
+django_password
+dotfiles
+google_id
+google_oauth
+google_oauth_client_id
+google_oauth_client_secret
+google_oauth_secret
+google_secret
+google_server_key
+gsecr
+heroku_api_key
+heroku_key
+heroku_oauth
+heroku_oauth_secret
+heroku_oauth_token
+heroku_secret
+heroku_secret_token
+htaccess_pass
+htaccess_user
+jwt_passphrase
+jwt_password
+jwt_public_key
+jwt_secret
+jwt_secret_key
+jwt_secret_token
+jwt_token
+jwt_user
+keyPassword
+mysql_password
+node_env
+postgres_password
+root_password
+secret_access_key
+secret_bearer
+secret_key
+secret_token
+secretKey
+security_credentials
+sid twilio
+sid_token
+sid_twilio
+slack_channel
+slack_incoming_webhook
+slack_key
+slack_outgoing_token
+slack_secret
+slack_signing_secret
+slack_token
+slack_url
+slack_webhook
+slack_webhook_url
+strip_key
+strip_secret
+strip_secret_token
+strip_token
+stripe_key
+stripe_secret
+stripe_secret_token
+stripe_token
+stripSecret
+stripToken
+zen_key
+zen_tkn
+zen_token
+zendesk_api_token
+zendesk_key
+zendesk_token
+zendesk_url
+zendesk_username
+
