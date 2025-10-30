@@ -1,6 +1,25 @@
 # Android
 android testing
+-----------------
 
+| Flag   | Meaning                                                                       |
+| ------ | ----------------------------------------------------------------------------- |
+| **-E** | Use **Extended regex** (allows `+`, `?`, `                                    |
+| **-R** | **Recursive**, follow directories **and symlinks**.                           |
+| **-r** | **Recursive**, but **don’t follow symlinks**.                                 |
+| **-i** | **Ignore case** (case-insensitive match).                                     |
+| **-I** | **Ignore binary files** (skip non-text files).                                |
+| **-n** | Show **line numbers**.                                                        |
+| **-P** | Use **Perl-compatible regex (PCRE)** (supports `\w`, `\s`, lookaheads, etc.). |
+| **-o** | Show **only the matched part** (not the whole line).                          |
+
+<br>
+
+```
+grep -rE -inI  -> print whole line which is too long and garbage -> 3.
+grep -RInPo    -> only print token/leak -> 1.
+grep -Eirn     -> print leak with few words of both side -> 2. 
+```
 ------------
 ## Installing
 ```
@@ -40,74 +59,27 @@ grep -rE -inI --binary-files=without-match --color=always \
 
 
 -----------------
-## Gmap api key quick check
-save as .py  -> exec as python3 gmap.py KEY-HERE
+
+# This is from regex.txt
+```
+part 1
+
+grep -Eirn --binary-files=without-match '"type": "service_account"|(([a-z0-9_ .,\\-]{0,25})(=|>|:=|\|\|:|<=|=>|:).{0,5}["'']([a-z0-9]{32})["''])|(?i)(bs|bugsnag)(.{0,20})?[0-9a-f]{32}|(?i)(facebook|fb)(.{0,20})?(?-i)["''][0-9a-f]{32}["'']|(?i)(facebook|fb)(.{0,20})?["''][0-9]{13,17}["'']|(?i)[fF][aA][cC][eE][bB][oO][oO][kK].*["'']?[0-9a-f]{32}["'']?|(?i)[hH][eE][rR][oO][kK][uU].*[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}|(?i)\b(?:twilio|tw)\s*[_-]?account[_-]?sid\s*[:=]\s*["'']?AC[a-zA-Z0-9_-]{32}["'']?|(?i)\b(?:twitter|tw)\s*[_-]?access[_-]?token\s*[:=]\s*["'']?[0-9]+-[0-9a-zA-Z]{40}["'']?|(?i)\b(?:twitter|tw)\s*[_-]?oauth[_-]?token\s*[:=]\s*["'']?[0-9a-zA-Z]{35,44}["'']?|(?i)\b(gh[pousr]_[0-9a-zA-Z]{36})\b|(?i)\bapi[_-]?key\s*[:=]\s*["'']?[a-zA-Z0-9_-]{20,100}["'']?|(?i)\bapi[_-]?key\s*[:=]\s*["'']?[0-9a-zA-Z]{32,45}["'']?|(?i)\bauthorization\s*:\s*basic\s+[a-zA-Z0-9=:_+/.-]{20,100}|(?i)\bauthorization\s*:\s*bearer\s+[a-zA-Z0-9_.=:_+/ -]{20,100}|(?i)\bsecret\s*[:=]\s*["'']?[0-9a-zA-Z]{32,45}["'']?|(?i)^AAAAAAAAAAAAAAAAAAAAA[A-Za-z0-9]{30,45}$|(?i)^[A-Za-z0-9]{32}\.[A-Za-z0-9]{16}$|(?i)^[A-Za-z0-9]{44}=[A-Za-z0-9+/=]{0,43}$|(?i)^[a-z]+://[^/]*:[^@]+@|(?i)^sl\.[A-Za-z0-9_-]{16,50}$|(?i)adobe(.{0,20})?["''][A-Za-z0-9]{32,56}["'']|(?i)aws(.{0,20})?(?-i)["''][0-9A-Za-z/+]{40}["'']|(?i)heroku(.{0,20})?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|(?i)linkedin(.{0,20})?(?-i)[0-9a-z]{12}|(?i)linkedin(.{0,20})?[0-9a-z]{16}|(?i)netlify(.{0,20})?["''][0-9A-Za-z]{40}["'']|(?i)stripe(.{0,20})?[sr]k_live_[0-9A-Za-z]{24}|(?i)twilio(.{0,20})?SK[0-9a-f]{32}|(?i)twitter(.{0,20})?[0-9a-z]{18,25}|(?i)twitter(.{0,20})?[0-9a-z]{35,44}|(?i)zoom(.{0,20})?["''][0-9A-Za-z_.-]{36,160}["'']' /path/to/targets --exclude-dir=.git || true
+
+
+part 2
+
+grep -Eirn --binary-files=without-match '(YC[a-zA-Z0-9_-]{38})|([-]+BEGIN [^[:space:]]+ PRIVATE KEY[-]+[[:space:]]*[^-]*[-]+END [^[:space:]]+ PRIVATE KEY[-]+)|([0-9]{12}-[a-z0-9]{32}\.apps\.googleusercontent\.com)|([a-z0-9._-]+\.firebaseio\.com|[a-z0-9._-]+\.firebaseapp\.com)|([a-zA-Z0-9._-]+\.s3\.amazonaws\.com|s3://[a-zA-Z0-9._-]+|s3-[a-zA-Z0-9._/]+|s3.amazonaws.com/[a-zA-Z0-9._-]+|s3.console.aws.amazon.com/s3/buckets/[a-zA-Z0-9._-]+)|([fF][aA][cC][eE][bB][oO][oO][kK]|[fF][bB])(.{0,20})?["''][0-9]{13,17}|(ghu|ghs)_[0-9A-Za-z]{36}|(google|gcp|youtube|drive|yt)(.{0,20})?["'']AIza[0-9A-Za-z_-]{35}["'']|(p8e-)[a-z0-9]{32}|(sk|pk)_(test|live)_[0-9a-z]{10,32}|k_live_[0-9A-Za-z]{24}|(us-east-1|us-east-2|us-west-1|us-west-2|sa-east-1):[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}|-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----|-----BEGIN (?:[A-Z ]+ )?PRIVATE KEY-----|-----BEGIN DSA PRIVATE KEY-----|-----BEGIN EC PRIVATE KEY-----|-----BEGIN PGP PRIVATE KEY BLOCK-----|-----BEGIN RSA PRIVATE KEY-----|00D[0-9A-Za-z]{15,18}![A-Za-z0-9]{40}|00[0-9A-Za-z]{20}\$[0-9A-Za-z]{6,}|00[A-Za-z0-9]{30}\.[A-Za-z0-9_-]{30,}\.[A-Za-z0-9_-]{30,}|6L[0-9A-Za-z_-]{38}|^6[0-9A-Za-z_-]{39}$|AIza[0-9A-Za-z_-]{35}|AP[A-Za-z0-9_-]{32}|A[0-9a-f]{32}|A[SK]IA[0-9A-Z]{16}|EAAAE[A-Za-z0-9_-]{59}|EAACEdEose0cBA[0-9A-Za-z]+|GR1348941[A-Za-z0-9=_-]{20,40}|IGQV[A-Za-z0-9._-]{10,}|SG\.[A-Za-z0-9_-]{22}\.[A-Za-z0-9_-]{43}|SG\.[\w_]{16,32}\.[\w_]{16,64}|SK[0-9a-fA-F]{32}|[0-9]+:AA[0-9A-Za-z_-]{33}' decompileee/ --exclude-dir=.git || true
+
+
+part 3
+
+grep -Eirn --binary-files=without-match '[0-9]{8,10}:AA[0-9A-Za-z_-]{35}|[0-9a-f]{32}-us[0-9]{1,2}|[MN][A-Za-z0-9]{23}\.[A-Za-z0-9_-]{6}\.[A-Za-z0-9_-]{27}|[A-Za-z0-9._%:+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|[A-Za-z]{3,10}://[^/[:space:]@:]{3,20}:[^/[:space:]@:]{3,20}@.{1,100}["'']|\bAKIA[0-9A-Z]{16}\b|\b[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com\b|\bghp_[A-Za-z0-9]{36}\b|access_token=[A-Za-z0-9]+|access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}|amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|arn:aws:sns:[a-z0-9-]+:[0-9]+:[A-Za-z0-9_-]+|cisco[A-Za-z0-9]{30}|cloudinary://[0-9]{15}:[0-9A-Za-z_-]+@[0-9A-Za-z_-]+|da2-[a-z0-9]{26}|ddapi_[A-Za-z0-9]{32}|dop_v1_[0-9a-f]{64}|dt0[A-Za-z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}|ey[A-Za-z0-9_=+.-]+\.[A-Za-z0-9_=+.-]+\.?[A-Za-z0-9_=+./-]*$|gho_[0-9A-Za-z]{36}|ghr_[0-9A-Za-z]{76}|glpat-[0-9A-Za-z_-]{20}' decompileee/ --exclude-dir=.git || true
+ 
+
+part 4
+
+grep -Eirn --binary-files=without-match 'glpat-[0-9A-Za-z-]{20}|https://[a-z0-9-]+\.firebaseio\.com|https://discord(?:app)?\.com/api/webhooks/[0-9]{18,20}/[A-Za-z0-9_-]{64,}|https://hooks\.slack\.com/services/[A-Za-z0-9]+/[A-Za-z0-9]+/[A-Za-z0-9]+|https://hooks\.slack\.com/services/T[A-Za-z0-9_]{8}/B[A-Za-z0-9_]{8}/[A-Za-z0-9_]{24}|key-[0-9A-Za-z]{32}|pk\.[A-Za-z0-9]{60}\.[A-Za-z0-9]{22}|pk_live_[0-9A-Za-z]{24}|pk_test_[0-9A-Za-z]{24}|rk_live_[0-9A-Za-z]{24}|s3\.amazonaws\.com/+|[A-Za-z0-9_-]*\.s3\.amazonaws\.com|sentry_auth_token_[0-9A-Za-z]{70}|shpat_[A-Fa-f0-9]{32}|shpca_[A-Fa-f0-9]{32}|shppa_[A-Fa-f0-9]{32}|shpss_[A-Fa-f0-9]{32}|sk_live_[0-9a-z]{32}|sk_[A-Za-z0-9]{32}|sk_live_[0-9A-Za-z]{24}|sk_live_[0-9a-z]{32}|sk_test_[0-9A-Za-z]{24}|sq0atp-[0-9A-Za-z_-]{22}|sq0csp-[0-9A-Za-z_-]{43}|sqOatp-[0-9A-Za-z_-]{22}|EAAA[A-Za-z0-9]{60}|tiktok_access_token=[A-Za-z0-9_]+|xox[baprs]-[0-9A-Za-z]{10,48}|xoxb-[A-Za-z0-9-]{24,34}|xoxp-[A-Za-z0-9-]{24,34}|xoxs-[0-9]{1,9}\.[0-9A-Za-z]{1,12}\.[0-9A-Za-z]{24,64}|ya29\.[0-9A-Za-z_-]+' decompileee/ --exclude-dir=.git || true  
 
 ```
-#!/usr/bin/env python3
-# Requires: pip3 install requests
-import sys, requests, json
-
-if len(sys.argv) < 2:
-    print("Usage: check_google_key.py <API_KEY>")
-    sys.exit(2)
-
-KEY = sys.argv[1]
-
-ENDPOINTS = [
-    ("Geocoding", f"https://maps.googleapis.com/maps/api/geocode/json?latlng=40,30&key={KEY}", "$5"),
-    ("StaticMaps", f"https://maps.googleapis.com/maps/api/staticmap?center=45%2C10&zoom=7&size=200x200&key={KEY}", "$2"),
-    ("Streetview", f"https://maps.googleapis.com/maps/api/streetview?size=200x200&location=40.720032,-73.988354&key={KEY}", "$7"),
-    ("Directions", f"https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key={KEY}", "$5"),
-    ("PlaceFind", f"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=name&key={KEY}", "Varies"),
-    ("Timezone", f"https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key={KEY}", "$5"),
-    ("Roads", f"https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795|60.170879,24.942796&key={KEY}", "$10"),
-    ("Geolocate", f"https://www.googleapis.com/geolocation/v1/geolocate?key={KEY}", "Varies"),
-]
-
-print(f"Checking key: {KEY}\n")
-for label, url, cost in ENDPOINTS:
-    try:
-        r = requests.get(url, timeout=10)
-        code = r.status_code
-        result = {}
-        try:
-            result = r.json()
-        except ValueError:
-            result = {"raw": r.text[:500]}
-
-        # Detect common Google error structures
-        status = "UNKNOWN"
-        msg = ""
-        if code == 200:
-            # check if a top-level error exists
-            if isinstance(result, dict) and ("error" in result or "error_message" in result or result.get("status") in ("REQUEST_DENIED","INVALID_REQUEST","OVER_QUERY_LIMIT")):
-                # common message fields
-                msg = result.get("error", {}).get("message") or result.get("error_message") or result.get("status") or ""
-                if "not authorized" in str(msg).lower() or "request denied" in str(msg).lower():
-                    status = "RESTRICTED"
-                elif "invalid" in str(msg).lower():
-                    status = "INVALID"
-                elif "over_query_limit" in str(msg).lower() or "quota" in str(msg).lower():
-                    status = "QUOTA_OR_BILLING"
-                else:
-                    status = "ERROR_RESPONSE"
-            else:
-                status = "OK_POSSIBLE_VALID"
-        elif code == 403:
-            status = "RESTRICTED_OR_AUTH"
-            msg = result.get("error", {}).get("message") if isinstance(result, dict) else r.text[:300]
-        elif code == 400:
-            status = "INVALID"
-            msg = result.get("error", {}).get("message") if isinstance(result, dict) else r.text[:300]
-        else:
-            status = f"HTTP_{code}"
-            msg = result.get("error", {}).get("message") if isinstance(result, dict) else r.text[:300]
-
-        print(f"{label:12} | {cost:7} | {status:20} | {msg}")
-    except Exception as e:
-        print(f"{label:12} | {cost:7} | ERROR               | {e}")
-```
-<br><br>
-
 
